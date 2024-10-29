@@ -6,7 +6,7 @@ from gql.transport.aiohttp import AIOHTTPTransport
 # Please note that this basic example won't work if you have an asyncio event loop running.
 # In some python environments (as with Jupyter which uses IPython) an asyncio event loop is created for you.
 # In that case you should use instead https://gql.readthedocs.io/en/latest/async/async_usage.html#async-usage
-def search_companies(bearer_token, query_name = None, tax_id = None, email = None, phone_number = None, webpage = None, limit_count = 10):
+def get_full_endpoint_schema(bearer_token, query_name = None, tax_id = None, email = None, phone_number = None, webpage = None, limit_count = 10):
     transport = AIOHTTPTransport(
         url="https://api.staging.v2.tnid.com/company",
         headers=
@@ -68,5 +68,5 @@ def search_companies(bearer_token, query_name = None, tax_id = None, email = Non
 
 
 # Example usage:
-token = "your_company_token"
-search_companies(token, "ACME")
+token = "your_token"
+get_full_endpoint_schema(token, "ACME")
